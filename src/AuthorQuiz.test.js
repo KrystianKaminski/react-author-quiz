@@ -60,11 +60,27 @@ describe("Author Quiz", () => {
             )
         })
 
-        it("should have a red background color", () => {
+        it("should have a green background color", () => {
             expect(wrapper.find('div.row.turn').props().style.backgroundColor).toBe('green')
         })
 
     })
 
+    describe('When the first answer is selected', () => {
+        let wrapper;
+        const handleAnswerSelected = jest.fn()
+        beforeAll(() => {
+            wrapper = mount(<AuthorQuiz {...state} onAnswerSelected={handleAnswerSelected} />)
+            wrapper.find('.answer').first().simulate('click')
+        })
+
+        it('onAnswerSelected should be called', () => {
+            expect(handleAnswerSelected).toHaveBeenCalled()
+        })
+
+        it('Selected receive The Shining', () => {
+            expect(handleAnswerSelected).toHaveBeenCalledWith('The Shining')
+        })
+    })
 
 })
