@@ -72,7 +72,7 @@ const render = () => {
 
 const state = {
     turnData: getTurnData(authors),
-    highlight: 'correct'
+    highlight: ''
 }
 
 render()
