@@ -6,17 +6,17 @@ import Turn from './Turn'
 import Continue from './Continue'
 import Footer from './Footer'
 
-class AuthorQuiz extends Component {
-  render() {
-    return (
-      <div className="container-fluid">
-        <Hero />
-        <Turn />
-        <Continue />
-        <Footer />
-      </div>
-    )
-  }
+const AuthorQuiz = (props) => {
+  return (
+    <div className="container-fluid">
+      <Hero />
+      <Turn
+        {...props.turnData}
+      />
+      <Continue />
+      <Footer />
+    </div>
+  )
 }
 
 export default AuthorQuiz;
