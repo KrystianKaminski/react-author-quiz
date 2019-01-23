@@ -29,7 +29,12 @@ const Turn = (props) => {
                 />
             </div>
             <div className="col-6">
-                {props.books.map((title) => <Book key={title} title={title} />)}
+                {props.books.map((title) =>
+                    <Book
+                        key={title}
+                        title={title}
+                        onClick={props.onAnswerSelected}
+                    />)}
             </div>
 
         </div>

@@ -59,10 +59,21 @@ const getTurnData = (authors) => {
     }
 }
 
-const state = {
-    turnData: getTurnData(authors),
-    highlight: 'wrong'
+const onAnswerSelected = (answer) => {
+    const isCorrect = state.turnData.author.books.some((book) => book === answer)
+    state.highlight = isCorrect ? 'correct' : 'wrong'
+    render()
 }
 
-ReactDOM.render(<AuthorQuiz {...state} />, document.getElementById('root'));
+const render = () => {
+    ReactDOM.render(<AuthorQuiz {...state} onAnswerSelected={onAnswerSelected} />, document.getElementById('root'));
+
+}
+
+const state = {
+    turnData: getTurnData(authors),
+    highlight: 'correct'
+}
+
+render()
 

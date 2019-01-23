@@ -13,6 +13,7 @@ const AuthorQuiz = (props) => {
       <Turn
         {...props.turnData}
         highlight={props.highlight}
+        onAnswerSelected={props.onAnswerSelected}
       />
       <Continue />
       <Footer />
