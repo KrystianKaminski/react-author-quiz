@@ -1,10 +1,16 @@
 import React from 'react'
+import './AddAuthorForm.css'
 
 const AddAuthorForm = (props) => {
     return (
-        <div>
+        <div className="AddAuthorForm">
             <h1>Add Author</h1>
-            <p>{JSON.stringify(props.match)}</p>
+            <form>
+                <div className="AddAuthorForm__input">
+                    <label htmlFor="name">Name</label>
+                    <input type="text" name="name" />
+                </div>
+            </form>
         </div>
     )
 }
