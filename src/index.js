@@ -77,8 +77,10 @@ const App = () => {
 const render = () => {
     ReactDOM.render(
         <BrowserRouter>
-            <Route exact path="/" component={App} />
-            <Route path="/add" component={AddAuthorForm} />
+            <React.Fragment>
+                <Route exact path="/" component={App} />
+                <Route path="/add" component={AddAuthorForm} />
+            </React.Fragment>
         </BrowserRouter>
         , document.getElementById('root'));
 

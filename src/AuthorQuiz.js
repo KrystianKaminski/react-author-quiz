@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom'
 
 import Hero from './Hero'
 import Turn from './Turn'
@@ -16,6 +17,13 @@ const AuthorQuiz = (props) => {
         onAnswerSelected={props.onAnswerSelected}
       />
       <Continue />
+      <p>
+        <Link
+          to='/add'
+        >
+          Add an author
+          </Link>
+      </p>
       <Footer />
     </div>
   )
