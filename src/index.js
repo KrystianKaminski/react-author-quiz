@@ -6,6 +6,8 @@ import AuthorQuiz from './AuthorQuiz';
 import './App.css'
 import { shuffle, sample } from 'underscore'
 
+import AddAuthorForm from './AddAuthorForm'
+
 const authors = [
     {
         name: 'Mark Twain',
@@ -76,6 +78,7 @@ const render = () => {
     ReactDOM.render(
         <BrowserRouter>
             <Route exact path="/" component={App} />
+            <Route path="/add" component={AddAuthorForm} />
         </BrowserRouter>
         , document.getElementById('root'));
 
