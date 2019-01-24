@@ -16,7 +16,10 @@ const AuthorQuiz = (props) => {
         highlight={props.highlight}
         onAnswerSelected={props.onAnswerSelected}
       />
-      <Continue />
+      <Continue
+        show={props.highlight === 'correct'}
+        onContinue={props.onContinue}
+      />
       <p>
         <Link
           to='/add'

@@ -70,18 +70,25 @@ const onAnswerSelected = (answer) => {
 
 const App = () => {
     return (
-        <AuthorQuiz {...state} onAnswerSelected={onAnswerSelected} />
+        <AuthorQuiz
+            {...state}
+            onAnswerSelected={onAnswerSelected}
+            onContinue={() => {
+                state = resetState()
+                render()
+            }}
+        />
     )
 }
 
-const AuthorWrapper = withRouter(({ history })) => {
+const AuthorWrapper = withRouter(({ history }) => {
     return (
         <AddAuthorForm onAddAuthor={(author) => {
             authors.push(author)
             history.push('/')
         }} />
     )
-}
+})
 
 const render = () => {
     ReactDOM.render(
@@ -95,10 +102,14 @@ const render = () => {
 
 }
 
-const state = {
-    turnData: getTurnData(authors),
-    highlight: ''
+const resetState = () => {
+    return {
+        turnData: getTurnData(authors),
+        highlight: ''
+    }
 }
+
+let state = resetState()
 
 render()
 
