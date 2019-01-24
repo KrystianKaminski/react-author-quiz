@@ -10,6 +10,11 @@ class AuthorForm extends React.Component {
         }
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+        this.props.onAddAuthor(this.state)
+    }
+
     onFieldChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
@@ -17,7 +22,9 @@ class AuthorForm extends React.Component {
     }
     render() {
         return (
-            <form>
+            <form
+                onSubmit={this.handleSubmit}
+            >
                 <div className="AddAuthorForm__input">
                     <label htmlFor="name">Name</label>
                     <input
@@ -36,6 +43,10 @@ class AuthorForm extends React.Component {
                         onChange={this.onFieldChange}
                     />
                 </div>
+                <input
+                    type="submit"
+                    value="Add"
+                />
             </form>
         )
     }

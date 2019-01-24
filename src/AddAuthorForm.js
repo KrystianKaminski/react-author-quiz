@@ -7,7 +7,9 @@ const AddAuthorForm = (props) => {
     return (
         <div className="AddAuthorForm">
             <h1>Add Author</h1>
-            <AuthorForm />
+            <AuthorForm
+                onAddAuthor={props.onAddAuthor}
+            />
         </div>
     )
 }
