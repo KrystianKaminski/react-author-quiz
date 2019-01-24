@@ -6,7 +6,10 @@ const Continue = (props) => {
         <div className="row continue">
             {props.show
                 ? <div className="col-11">
-                    <button className="btn btn-primary btn-lg float-right">
+                    <button
+                        className="btn btn-primary btn-lg float-right"
+                        onClick={props.onContinue}
+                    >
                         Continue
                     </button>
                 </div>
