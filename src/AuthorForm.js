@@ -9,6 +9,12 @@ class AuthorForm extends React.Component {
             imageUrl: ''
         }
     }
+
+    onFieldChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
     render() {
         return (
             <form>
@@ -18,6 +24,7 @@ class AuthorForm extends React.Component {
                         type="text"
                         name="name"
                         value={this.state.name}
+                        onChange={this.onFieldChange}
                     />
                 </div>
                 <div className="AddAuthorForm__input">
@@ -26,6 +33,7 @@ class AuthorForm extends React.Component {
                         type="text"
                         name="imageUrl"
                         value={this.state.imageUrl}
+                        onChange={this.onFieldChange}
                     />
                 </div>
             </form>
