@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, withRouter } from 'react-router-dom'
 import './index.css';
 import AuthorQuiz from './AuthorQuiz';
 import './App.css'
@@ -74,9 +74,12 @@ const App = () => {
     )
 }
 
-const AuthorWrapper = () => {
+const AuthorWrapper = withRouter(({ history })) => {
     return (
-        <AddAuthorForm onAddAuthor={console.log} />
+        <AddAuthorForm onAddAuthor={(author) => {
+            authors.push(author)
+            history.push('/')
+        }} />
     )
 }
 
