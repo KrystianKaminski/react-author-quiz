@@ -1,5 +1,5 @@
 import React from 'react'
-import './AddAuthorForm.css'
+import '../css/AddAuthorForm.css'
 
 import AuthorForm from './AuthorForm'
 

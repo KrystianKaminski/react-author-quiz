@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, withRouter } from 'react-router-dom'
-import './index.css';
-import AuthorQuiz from './AuthorQuiz';
-import './App.css'
+import './css/index.css';
+import AuthorQuiz from './app/AuthorQuiz';
+import './css/App.css'
 import { shuffle, sample } from 'underscore'
 
-import AddAuthorForm from './AddAuthorForm'
+import AddAuthorForm from './app/AddAuthorForm'
 
 const authors = [
     {
